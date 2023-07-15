@@ -31,7 +31,7 @@ from sklearn.utils import resample
 
 #function to set the bootstrap and calculate confidence interval
 n_iterations = 100
-def bootstrap(a, b, calculate_statistic,name):
+def bootstrap(a, b, calculate_statistic,save_location):
     # run bootstrap
     stats = list()
     for i in range(n_iterations):
@@ -42,7 +42,8 @@ def bootstrap(a, b, calculate_statistic,name):
         stats.append(stat)
     average = np.average(stats)
     print(len(a),len(sample_a),str(calculate_statistic))
-    metric = pd.DataFrame(stats)    
+    metric = pd.DataFrame(stats)
+    #save the result of 100 iterations
     metric.to_csv("results/{}_DL.csv".format(name))
     # confidence intervals
     alpha = 0.95
