@@ -161,7 +161,7 @@ epoch = 300
 learning_rate = 0.0005
 #unweighted class entropy： loss_fn = nn.BCELoss()
 #weighted class entropy：
-loss_fn = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([520/335]))
+loss_fn = nn.BCEWithLogitsLoss(pos_weight=torch.tensor([  ]))
 loss_fn = loss_fn.to(device)
 
 '''
